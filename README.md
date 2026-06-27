@@ -1,11 +1,10 @@
-# ☕ Restuarent-demo
+# ☕ Restaurant-demo
 
 A modern and responsive cafe website built with **Next.js**. The project features a clean user interface, smooth navigation, and a visually appealing design for showcasing a cafe's menu, services, and ambiance.
 
 ## 🚀 Live Demo
 
-https://restuarent-demo-project.vercel.app/)
-
+https://restuarent-demo-project.vercel.app/
 
 ## 📌 Features
 
@@ -51,7 +50,7 @@ Run the development server:
 npm run dev
 ```
 
-Open:
+Open in your browser:
 
 https://restuarent-demo-project.vercel.app/
 
@@ -60,10 +59,11 @@ https://restuarent-demo-project.vercel.app/
 ```
 urban-cafe/
 │── app/
-│── public/
 │── components/
-│── styles/
+│── public/
 │── package.json
+│── package-lock.json
+│── next.config.js
 │── README.md
 ```
 
@@ -73,7 +73,6 @@ urban-cafe/
 
 GitHub:
 https://github.com/alshifakhan1411
-
 
 ## 📄 License
 
