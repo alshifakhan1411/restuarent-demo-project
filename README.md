@@ -4,7 +4,7 @@ A modern and responsive cafe website built with **Next.js**. The project feature
 
 ## 🚀 Live Demo
 
-👉 Add your deployed Vercel link here
+https://restuarent-demo-project.vercel.app/)
 
 
 ## 📌 Features
@@ -53,7 +53,7 @@ npm run dev
 
 Open:
 
-
+https://restuarent-demo-project.vercel.app/
 
 ## 📁 Project Structure
 
