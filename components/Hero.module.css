@@ -1,0 +1,196 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(192, 57, 43, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 20%, rgba(232, 160, 32, 0.1) 0%, transparent 50%),
+    var(--charcoal);
+}
+
+/* Brick-wall SVG pattern as background texture */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='40' viewBox='0 0 80 40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='78' height='18' rx='1' fill='none' stroke='rgba(255,255,255,0.025)' stroke-width='0.5'/%3E%3Crect x='40' y='21' width='78' height='18' rx='1' fill='none' stroke='rgba(255,255,255,0.025)' stroke-width='0.5'/%3E%3Crect x='-40' y='21' width='78' height='18' rx='1' fill='none' stroke='rgba(255,255,255,0.025)' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 80px 40px;
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 26, 0.2) 0%,
+    rgba(26, 26, 26, 0.5) 70%,
+    rgba(26, 26, 26, 1) 100%
+  );
+  pointer-events: none;
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s ease 0.1s both;
+}
+
+/* The main glowing URBAN wordmark */
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s ease 0.2s both;
+}
+
+.urbanGlow {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 18vw, 180px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--amber);
+  text-shadow:
+    0 0 40px rgba(232, 160, 32, 0.6),
+    0 0 80px rgba(232, 160, 32, 0.3),
+    0 0 120px rgba(232, 160, 32, 0.15);
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+.cafe {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 4vw, 38px);
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--tan-dark);
+  margin-bottom: 32px;
+  animation: fadeUp 0.8s ease 0.35s both;
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  animation: fadeUp 0.8s ease 0.45s both;
+}
+
+.badge {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.badgeDivider {
+  width: 4px;
+  height: 4px;
+  background: var(--amber);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s ease 0.55s both;
+}
+
+/* Scroll indicator */
+.scrollHint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.scrollHint span {
+  display: block;
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--amber));
+  margin: 0 auto;
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 40px rgba(232, 160, 32, 0.6),
+      0 0 80px rgba(232, 160, 32, 0.3),
+      0 0 120px rgba(232, 160, 32, 0.15);
+  }
+  50% {
+    text-shadow:
+      0 0 60px rgba(232, 160, 32, 0.8),
+      0 0 100px rgba(232, 160, 32, 0.45),
+      0 0 160px rgba(232, 160, 32, 0.2);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollLine {
+  0%, 100% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+  30%, 70% { opacity: 1; transform: scaleY(1); }
+}
+
+@media (max-width: 480px) {
+  .ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+}

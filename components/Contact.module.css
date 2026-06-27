@@ -1,0 +1,183 @@
+.section {
+  padding: var(--section-pad) 0;
+  background: var(--charcoal-light);
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(232, 160, 32, 0.3), transparent);
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+
+/* Info column */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.infoBlock {}
+
+.infoLabel {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 10px;
+}
+
+.infoText {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.phones {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.phone {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--cream);
+  transition: color 0.2s;
+}
+
+.phone:hover {
+  color: var(--amber);
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.social {
+  font-size: 14px;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.social:hover {
+  color: var(--amber);
+}
+
+/* Order block */
+.orderBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.orderCard {
+  background: var(--charcoal);
+  border: 1px solid rgba(232, 160, 32, 0.2);
+  border-radius: 4px;
+  padding: 36px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.orderIcon {
+  font-size: 36px;
+}
+
+.orderTitle {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+}
+
+.orderText {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+.waBtn {
+  width: 100%;
+  justify-content: center;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.orText {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.foodpandaBtn {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--cream);
+  background: var(--charcoal-mid);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 28px;
+  border-radius: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.foodpandaBtn:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.priceRange {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--muted);
+  background: var(--charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 4px;
+  padding: 14px;
+}
+
+.priceRange strong {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--amber);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
